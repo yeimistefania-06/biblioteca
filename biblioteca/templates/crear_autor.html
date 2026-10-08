@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = 'mb-3 mt-1'>
+    <div class = 'offset-1 container mx-5'>
+        <form method='POST' action = "{% url 'crear_autor'%}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nombre" class="form-label">nombre:</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="nombre"
+                    id="nombre"
+                    placeholder="nombre"
+                    required/>
+            </div>
+
+    <div class = 'mb-3 mt-1'>
+        <div class="mb-3">
+            <label for="lugar" class="form-label">Lugar De Nacimiento:</label>
+            <input
+                type="text"
+                class="form-control"
+                name="lugar"
+                id="lugar"
+                placeholder="lugar"
+                required/>
+        </div>
+
+    <div class = 'mb-3 mt-1'>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha De Nacimiento:</label>
+            <input
+                type="datetime-local"
+                class="form-control"
+                name="fecha"
+                id="fecha"
+                placeholder="fecha"
+                required/>
+        </div>    
+    </div>
+
+    <input type='submit' class="btn btn-success" value="enviar"/>
+
+</form>
+
+</div>
+{% endblock content %}
